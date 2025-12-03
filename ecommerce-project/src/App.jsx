@@ -11,14 +11,13 @@ import { TrackingPage } from './pages/TrackingPage'
 function App() {
   const [cart, setCart] = useState([]);
 
-  useEffect(() =>{
-    const fetchAppData = async () => {
-      const response = await axios.get('/api/cart-items?expand=product')
-      setCart(response.data);
-    }
-    fetchAppData();
-     
+  const loadCart = async () => {
+    const response = await axios.get('/api/cart-items?expand=product')
+    setCart(response.data);
+  }
 
+  useEffect(() =>{
+   loadCart();     
   }, []);
   
   
@@ -27,7 +26,7 @@ function App() {
 
       <Route 
         index        // or path = "/" 
-        element = {<HomePage cart={cart} />}
+        element = {<HomePage cart={cart} loadCart = {loadCart} />}
       />
 
       <Route 
