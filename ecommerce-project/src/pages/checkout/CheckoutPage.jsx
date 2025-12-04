@@ -5,7 +5,7 @@ import { PaymentSummary } from "./PaymentSummary";
 import "./checkout-header.css";
 import "./CheckoutPage.css";
 
-export function CheckoutPage({ cart, loadCart }) {
+export function CheckoutPage({ cart, loadCart}) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
@@ -32,17 +32,13 @@ export function CheckoutPage({ cart, loadCart }) {
         <div className="header-content">
           <div className="checkout-header-left-section">
             <a href="/">
-              <img className="logo" src="images/logo.png" />
-              <img className="mobile-logo" src="images/mobile-logo.png" />
+              <img className="logo" src="images/eshopping-logo.png" />
+              <img className="mobile-logo" src="images/eshopping-logo.png" />
             </a>
           </div>
 
           <div className="checkout-header-middle-section">
-            Checkout (
-            <a className="return-to-home-link" href="/.html">
-              3 items
-            </a>
-            )
+            Checkouts
           </div>
 
           <div className="checkout-header-right-section">
