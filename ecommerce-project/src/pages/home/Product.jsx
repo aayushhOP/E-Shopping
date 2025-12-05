@@ -7,7 +7,7 @@ export function Product({product, loadCart}) {
   const [quantity, setQuantity] = useState(1);
   const [showAddedMesssage, setShowAddedMessage] = useState(false);
   const addToCart = async () => {
-    await axios.post("api/cart-items", {
+    await axios.post("/api/cart-items", {
       productId: product.id,
       quantity
     });
@@ -25,7 +25,8 @@ export function Product({product, loadCart}) {
     setQuantity(quantitySelected);
   }
   return (
-    <div className="product-container">
+    <div className="product-container"
+      data-testid='product-container' >
       <div className="product-image-container">
         <img className="product-image"
         data-testid= "product-image" src={product.image} />
